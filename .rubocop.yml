@@ -1,9 +1,6 @@
 plugins:
   - "rubocop-rspec"
 
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
-  
 AllCops:
   Exclude:
     - 'Gemfile'
@@ -24,3 +21,6 @@ Lint/EmptyBlock:
 RSpec:
   Exclude:
     - 'spec/*'
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
