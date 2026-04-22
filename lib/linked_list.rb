@@ -70,7 +70,7 @@ class LinkedList
   def contains?(value, list = @list)
     return false if list.nil?
 
-    return true if list.value.includes?(value)
+    return true if list.value.include?(value)
 
     contains?(value, list.next_node)
   end
