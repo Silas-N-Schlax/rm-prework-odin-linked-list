@@ -76,7 +76,9 @@ class LinkedList
   end
 
   def index(value, list = @list, index = 0)
-    return nil if list.nil? || list.value == value
+    return nil if list.nil?
+
+    return index if list.value.include?(value)
 
     index(value, list.next_node, index + 1)
   end

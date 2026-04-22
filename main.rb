@@ -14,7 +14,7 @@ list.prepend("fish")
 # p list.at(2)
 # p list.pop
 # p list.to_s
-# p list.index("dog")
+p list.index("dog")
 # p list.contains?("turtle")
 p list.to_s
 list.insert_at(2, "value", "value 1")
