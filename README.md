@@ -48,7 +48,7 @@ git clone https://github.com/Silas-N-Schlax/rm-prework-odin-linked-list.git
 Navigate to the project directory:
 
 ```bash
-cd rm-prework-odin-linked-list.git
+cd rm-prework-odin-linked-list
 ```
 
 Run `ruby main.rb` in your terminal.
