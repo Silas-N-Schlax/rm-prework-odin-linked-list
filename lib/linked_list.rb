@@ -42,13 +42,13 @@ class LinkedList
   def tail
     return nil if @list.nil?
 
-    get_last_node.value
+    last_node.value
   end
 
-  def get_last_node(list = @list)
+  def last_node(list = @list)
     return list if list.next_node.nil?
 
-    get_last_node(list.next_node)
+    last_node(list.next_node)
   end
 
   def at(index, list = @list, current_index = 0)
