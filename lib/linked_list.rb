@@ -89,6 +89,12 @@ class LinkedList
     to_s(list.next_node, string + "(#{list.value}) -> ")
   end
 
+  def to_a(list = @list, array = [])
+    return array if list.nil?
+
+    to_a(list.next_node, array << list.value)
+  end
+
   def insert_at(index, *values)
     raise IndexError if index.negative?
 
