@@ -7,7 +7,7 @@ class LinkedList
     @list = nil
   end
 
-  def append(value)
+  def append(value, list = @list)
     if @list.nil?
       @list = Node.new(value)
     else
@@ -85,5 +85,43 @@ class LinkedList
     return "#{string}nil" if list.nil?
 
     to_s(list.next_node, string + "(#{list.value}) -> ")
+  end
+
+  def insert_at(index, *values)
+    raise IndexError if index.negative?
+
+    temp = node_at(index)
+    next_nodes = temp.next_node
+    values.each do |value|
+      temp.next_node = Node.new(value)
+      temp = temp.next_node
+    end
+    temp.next_node = next_nodes
+  end
+
+  def remove_at(index)
+    raise IndexError if index.negative?
+
+    temp = node_at(index)
+    next_nodes = temp.next_node
+    next_nodes = next_nodes.next_node
+    temp.next_node = next_nodes
+  end
+
+  def node_at(index)
+    temp = @list
+    (index - 1).times do
+      raise IndexError if temp.nil?
+
+      temp = temp.next_node
+    end
+    temp
+  end
+
+  def update_at(index, new_value)
+    raise IndexError if index.negative?
+
+    temp = node_at(index).next_node
+    temp.value = new_value
   end
 end

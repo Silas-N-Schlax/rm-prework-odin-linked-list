@@ -15,6 +15,13 @@ list.prepend("fish")
 # p list.pop
 # p list.to_s
 # p list.index("dog")
-p list.contains?("turtle")
+# p list.contains?("turtle")
+p list.to_s
+list.insert_at(2, "value", "value 1")
+p list.to_s
+list.remove_at(2)
+p list.to_s
+list.update_at(2, "new value")
+p list.to_s
 
 # p list
