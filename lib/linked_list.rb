@@ -92,9 +92,8 @@ class LinkedList
   def insert_at(index, *values)
     raise IndexError if index.negative?
 
-    if index.zero?
-      return values.reverse.each { |v| prepend(v) }
-    end
+    return values.reverse.each { |v| prepend(v) } if index.zero?
+
     temp = node_at(index)
     next_nodes = temp.next_node
     values.each do |value|
@@ -110,6 +109,8 @@ class LinkedList
     temp = node_at(index)
     next_nodes = temp.next_node
     if index.zero?
+      return @list = nil if size == 1
+
       @list = Node.new(next_nodes.value)
       @list.next_node = next_nodes.next_node
     end
@@ -127,7 +128,7 @@ class LinkedList
   end
 
   def update_at(index, new_value)
-    raise IndexError if index.negative?
+    raise IndexError if index.negative? || size.zero?
 
     return @list.value = new_value if index.zero?
 
