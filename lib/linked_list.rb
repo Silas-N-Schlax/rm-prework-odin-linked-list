@@ -7,7 +7,7 @@ class LinkedList
     @list = nil
   end
 
-  def append(value, list = @list)
+  def append(value)
     if @list.nil?
       @list = Node.new(value)
     else
