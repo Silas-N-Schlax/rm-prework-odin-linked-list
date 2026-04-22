@@ -64,7 +64,7 @@ Key things learned from building this project:
 
 Things I would improve in a future iteration:
 
-* Add extra credit methods for insert_at and remove_at
+* Add extra credit methods for insert_at and remove_at (updated!)
 
 ---
 
